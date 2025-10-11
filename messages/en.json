@@ -38,5 +38,9 @@
     "title": "Refaat Al Hallab - The Refaat Hallab branch in Kalamoun",
     "subtitle": "Authentic Lebanese Sweets Since 1881",
     "callNow": "Call Now"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to your protected dashboard! This page is only accessible to authenticated users."
   }
 }

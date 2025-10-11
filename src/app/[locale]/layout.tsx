@@ -3,7 +3,7 @@ import { Montserrat, Amiri } from "next/font/google";
 import "./globals.css";
 import { HeroUIProvider } from "@heroui/react";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
+import { getLocale } from "next-intl/server";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
