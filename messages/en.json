@@ -1,0 +1,42 @@
+{
+  "navbar": {
+    "title": "Refaat Al Hallab",
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "The Refaat Hallab branch in Kalamoun",
+    "title": "Taste the Tradition of Lebanon",
+    "description": "Discover our exquisite collection of authentic Lebanese sweets, crafted with love and tradition passed down through generations.",
+    "cta": "Explore Our Menu",
+    "since": "Since 1881",
+    "traditional": "Traditional Recipe"
+  },
+  "menu": {
+    "title": "Our Delicious Menu",
+    "subtitle": "Handcrafted Lebanese sweets made with the finest ingredients",
+    "availableToday": "Available Today",
+    "orderTomorrow": "Order Tomorrow",
+    "addToOrder": "Add to Order"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us for orders and inquiries",
+    "phone": "Phone",
+    "phoneNumber": "+961 71 600 153",
+    "callNow": "Call Now",
+    "location": "Location",
+    "address": "The Refaat Hallab branch in Kalamoun",
+    "city": "Kalamoun, Lebanon",
+    "hours": "Opening Hours",
+    "schedule": "Daily: 8:00 AM - 10:00 PM",
+    "status": "Open Every Day"
+  },
+  "footer": {
+    "title": "Refaat Al Hallab - The Refaat Hallab branch in Kalamoun",
+    "subtitle": "Authentic Lebanese Sweets Since 1881",
+    "callNow": "Call Now"
+  }
+}

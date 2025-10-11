@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@plugin '../hero.ts';
+/* Note: You may need to change the path to fit your project structure */
+@source '../../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Lebanese Sweets Shop Color Palette */
+  --hlb-primary: #0B2F64;      /* Dark blue for headers, buttons */
+  --hlb-gold: #D8B64C;         /* Gold for prices, accents */
+  --hlb-bg: #FFFFFF;           /* White background */
+  --hlb-text: #0B2F64;         /* Dark blue text */
+  --hlb-text-light: #6B7280;   /* Light gray for descriptions */
+  --hlb-available: #3B82F6;    /* Light blue for "Available Today" */
+  --hlb-order-tomorrow: #F59E0B; /* Light gold for "Order Tomorrow" */
+  --hlb-card-bg: #FFFFFF;      /* White for cards */
+  --hlb-shadow: rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  
+  /* Font variables */
+  --font-montserrat: var(--font-montserrat);
+  --font-amiri: var(--font-amiri);
+}
+
+@theme inline {
+  --color-hlb-primary: var(--hlb-primary);
+  --color-hlb-gold: var(--hlb-gold);
+  --color-hlb-bg: var(--hlb-bg);
+  --color-hlb-text: var(--hlb-text);
+  --color-hlb-text-light: var(--hlb-text-light);
+  --color-hlb-available: var(--hlb-available);
+  --color-hlb-order-tomorrow: var(--hlb-order-tomorrow);
+  --color-hlb-card-bg: var(--hlb-card-bg);
+  --color-hlb-shadow: var(--hlb-shadow);
+  
+  --font-montserrat: var(--font-montserrat);
+  --font-amiri: var(--font-amiri);
+}
+
+html {
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  background: var(--hlb-bg);
+  color: var(--hlb-text);
+  line-height: 1.7;
+}
+
+/* Font classes */
+.font-montserrat {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.font-amiri {
+  font-family: var(--font-amiri), serif;
+}
+
+/* Arabic text styling */
+[dir="rtl"] {
+  font-family: var(--font-amiri), serif;
+}
+
+[dir="ltr"] {
+  font-family: var(--font-montserrat), sans-serif;
+}
