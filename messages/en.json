@@ -42,5 +42,39 @@
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Welcome to your protected dashboard! This page is only accessible to authenticated users."
+  },
+  "onboarding": {
+    "form": {
+      "title": "Tell us about you",
+      "description": "We need a few details to deliver your favorite sweets.",
+      "first_name": {
+        "label": "First name",
+        "placeholder": "Enter your first name",
+        "tooltip": "We use your first name to personalize your experience."
+      },
+      "last_name": {
+        "label": "Last name",
+        "placeholder": "Enter your last name",
+        "tooltip": "Your last name helps us keep your account secure."
+      },
+      "phone_number": {
+        "label": "Phone number",
+        "placeholder": "Enter your phone number",
+        "tooltip": "We contact you about delivery updates via phone.",
+        "error": {
+          "required": "Phone number is required.",
+          "invalid": "Enter a valid international phone number."
+        }
+      },
+      "delivery_address": {
+        "label": "Delivery address",
+        "placeholder": "Enter your delivery address",
+        "tooltip": "We deliver your order to this address."
+      },
+      "submit": "Continue",
+      "error": {
+        "required": "This field is required."
+      }
+    }
   }
 }

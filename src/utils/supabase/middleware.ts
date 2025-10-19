@@ -5,6 +5,7 @@ const isProtectedRoute = (pathname: string, locale: string) => {
     const protectedPatterns = [
         `/${locale}/dashboard`,
         `/${locale}/api`,
+        `/${locale}/onboarding`,
     ];
     
     return protectedPatterns.some(pattern => 
