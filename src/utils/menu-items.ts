@@ -13,7 +13,7 @@ type Translation = {
 
 type CategoryTranslation = {
   locale: string;
-  name: string;
+  name: string; 
 };
 
 type MenuItemQueryResult = MenuItemRowType & {
