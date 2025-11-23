@@ -12,7 +12,7 @@ import {
 import { updateCategoryFromValues } from "@/app/[locale]/(dashboard)/dashboard/actions";
 import { CategoryFormFields } from "./CategoryFormFields";
 
-// Category data shape from DashboardClient
+// Category data shape
 type CategoryData = {
   id: string;
   name: string;
