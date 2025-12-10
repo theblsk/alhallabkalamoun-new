@@ -48,6 +48,7 @@
     "welcome": "إدارة الفئات، عناصر القائمة، والأسعار في مكان واحد.",
     "goToMenuItems": "الذهاب إلى عناصر القائمة",
     "goToCategories": "الذهاب إلى الفئات",
+    "tabsAriaLabel": "تبويبات لوحة التحكم",
     "categories": {
       "title": "الفئات",
       "subtitle": "إدارة فئات القائمة",
@@ -71,6 +72,48 @@
         "description": "الوصف",
         "descriptionAr": "الوصف بالعربية",
         "active": "نشط"
+      },
+      "search": {
+        "placeholder": "البحث في الفئات"
+      },
+      "table": {
+        "title": "الفئات",
+        "ariaLabel": "الفئات",
+        "columns": {
+          "name": "الاسم",
+          "nameAr": "الاسم بالعربية",
+          "status": "الحالة",
+          "description": "الوصف",
+          "actions": "الإجراءات"
+        },
+        "empty": {
+          "default": "لا توجد فئات بعد",
+          "search": "لا توجد فئات مطابقة لبحثك"
+        }
+      },
+      "status": {
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "confirmations": {
+        "delete": {
+          "title": "تأكيد الحذف",
+          "content": "هل أنت متأكد من حذف {name}؟ لا يمكن التراجع عن هذا الإجراء.",
+          "confirm": "حذف",
+          "cancel": "إلغاء"
+        },
+        "enable": {
+          "title": "تأكيد التفعيل",
+          "content": "هل أنت متأكد من تفعيل {name}؟",
+          "confirm": "تفعيل",
+          "cancel": "إلغاء"
+        },
+        "disable": {
+          "title": "تأكيد التعطيل",
+          "content": "هل أنت متأكد من تعطيل {name}؟",
+          "confirm": "تعطيل",
+          "cancel": "إلغاء"
+        }
       }
     },
     "items": {
@@ -107,6 +150,68 @@
         "available": "متاح",
         "active": "نشط",
         "image": "الصورة"
+      },
+      "search": {
+        "placeholder": "البحث في عناصر القائمة"
+      },
+      "table": {
+        "title": "عناصر القائمة",
+        "ariaLabel": "عناصر القائمة",
+        "columns": {
+          "image": "الصورة",
+          "name": "الاسم",
+          "nameAr": "الاسم بالعربية",
+          "category": "الفئة",
+          "status": "الحالة",
+          "prices": "الأسعار",
+          "actions": "الإجراءات"
+        },
+        "empty": {
+          "default": "لا توجد عناصر بعد",
+          "search": "لا توجد عناصر مطابقة لبحثك"
+        }
+      },
+      "filters": {
+        "title": "المرشحات",
+        "priceUnit": "وحدة السعر",
+        "availability": "التوفر",
+        "activeStatus": "الحالة النشطة",
+        "all": "الكل",
+        "clear": "مسح",
+        "gram": "جرام",
+        "box": "صندوق",
+        "available": "متاح",
+        "unavailable": "غير متاح",
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "confirmations": {
+        "delete": {
+          "title": "تأكيد الحذف",
+          "content": "هل أنت متأكد من حذف {name}؟ لا يمكن التراجع عن هذا الإجراء.",
+          "confirm": "حذف",
+          "cancel": "إلغاء"
+        },
+        "enable": {
+          "title": "تأكيد التفعيل",
+          "content": "هل أنت متأكد من تفعيل {name}؟",
+          "confirm": "تفعيل",
+          "cancel": "إلغاء"
+        },
+        "disable": {
+          "title": "تأكيد التعطيل",
+          "content": "هل أنت متأكد من تعطيل {name}؟",
+          "confirm": "تعطيل",
+          "cancel": "إلغاء"
+        }
+      },
+      "noImage": "لا توجد صورة",
+      "ariaLabels": {
+        "search": "بحث",
+        "edit": "تعديل عنصر القائمة",
+        "delete": "حذف عنصر القائمة",
+        "enable": "تفعيل عنصر القائمة",
+        "disable": "تعطيل عنصر القائمة"
       }
     },
     "search": {

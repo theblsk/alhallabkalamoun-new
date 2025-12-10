@@ -119,23 +119,27 @@ export function CategoriesTable({ locale }: CategoriesTableProps) {
 
     if (confirmationConfig.type === 'delete') {
       return {
-        title: 'Confirm Deletion',
-        content: `Are you sure you want to delete ${confirmationConfig.name}? This action cannot be undone.`,
-        confirmText: 'Delete',
-        cancelText: 'Cancel',
+        title: t('confirmations.delete.title'),
+        content: t('confirmations.delete.content', { name: confirmationConfig.name }),
+        confirmText: t('confirmations.delete.confirm'),
+        cancelText: t('confirmations.delete.cancel'),
         confirmColor: 'danger' as const,
         onConfirm: () => handleDeleteCategory(confirmationConfig.id),
       };
     }
 
     if (confirmationConfig.type === 'toggle') {
-      const action = confirmationConfig.isActive ? 'disable' : 'enable';
-      const Action = confirmationConfig.isActive ? 'Disable' : 'Enable';
       return {
-        title: `Confirm ${Action}`,
-        content: `Are you sure you want to ${action} ${confirmationConfig.name}?`,
-        confirmText: Action,
-        cancelText: 'Cancel',
+        title: confirmationConfig.isActive
+          ? t('confirmations.disable.title')
+          : t('confirmations.enable.title'),
+        content: confirmationConfig.isActive
+          ? t('confirmations.disable.content', { name: confirmationConfig.name })
+          : t('confirmations.enable.content', { name: confirmationConfig.name }),
+        confirmText: confirmationConfig.isActive
+          ? t('confirmations.disable.confirm')
+          : t('confirmations.enable.confirm'),
+        cancelText: t('confirmations.disable.cancel'),
         confirmColor: (confirmationConfig.isActive ? 'warning' : 'success') as 'warning' | 'success',
         onConfirm: () => handleToggleCategory(confirmationConfig.id, confirmationConfig.isActive),
       };
@@ -162,8 +166,8 @@ export function CategoriesTable({ locale }: CategoriesTableProps) {
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div className="w-full max-w-md">
           <Input
-            aria-label="search"
-            placeholder="Search categories"
+            aria-label={t('ariaLabels.search')}
+            placeholder={t('search.placeholder')}
             startContent={<Search size={16} />}
             variant="bordered"
             value={searchQuery}
@@ -182,25 +186,29 @@ export function CategoriesTable({ locale }: CategoriesTableProps) {
 
       <Card>
         <CardHeader>
-          <h2 className="text-xl font-medium">Categories</h2>
+          <h2 className="text-xl font-medium">{t('table.title')}</h2>
         </CardHeader>
         <CardBody>
-          <Table aria-label="Categories">
+          <Table aria-label={t('table.ariaLabel')}>
             <TableHeader>
-              <TableColumn>Name</TableColumn>
-              <TableColumn>Arabic Name</TableColumn>
-              <TableColumn>Status</TableColumn>
-              <TableColumn>Description</TableColumn>
-              <TableColumn>Actions</TableColumn>
+              <TableColumn>{t('table.columns.name')}</TableColumn>
+              <TableColumn>{t('table.columns.nameAr')}</TableColumn>
+              <TableColumn>{t('table.columns.status')}</TableColumn>
+              <TableColumn>{t('table.columns.description')}</TableColumn>
+              <TableColumn>{t('table.columns.actions')}</TableColumn>
             </TableHeader>
-            <TableBody emptyContent={searchQuery ? 'No categories match your search' : 'No categories yet'}>
+            <TableBody
+              emptyContent={
+                searchQuery ? t('table.empty.search') : t('table.empty.default')
+              }
+            >
               {filteredCategories.map((category) => (
                 <TableRow key={category.id}>
                   <TableCell className="font-medium">{category.name}</TableCell>
                   <TableCell>{category.name_ar ?? '—'}</TableCell>
                   <TableCell>
                     <Chip size="sm" color={category.is_active ? 'primary' : 'default'}>
-                      {category.is_active ? 'Active' : 'Inactive'}
+                      {category.is_active ? t('status.active') : t('status.inactive')}
                     </Chip>
                   </TableCell>
                   <TableCell className="max-w-xs truncate">
@@ -215,7 +223,7 @@ export function CategoriesTable({ locale }: CategoriesTableProps) {
                         size="sm"
                         variant="flat"
                         startContent={<Edit2 size={14} />}
-                        aria-label="Edit category"
+                        aria-label={t('ariaLabels.edit')}
                       />
                       <Button
                         isIconOnly
@@ -232,7 +240,7 @@ export function CategoriesTable({ locale }: CategoriesTableProps) {
                           });
                           onConfirmationOpen();
                         }}
-                        aria-label={category.is_active ? 'Disable category' : 'Enable category'}
+                        aria-label={category.is_active ? t('ariaLabels.disable') : t('ariaLabels.enable')}
                       />
                       <Button
                         isIconOnly
@@ -248,7 +256,7 @@ export function CategoriesTable({ locale }: CategoriesTableProps) {
                           });
                           onConfirmationOpen();
                         }}
-                        aria-label="Delete category"
+                        aria-label={t('ariaLabels.delete')}
                       />
                     </div>
                   </TableCell>

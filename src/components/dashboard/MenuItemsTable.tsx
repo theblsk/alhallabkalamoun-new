@@ -195,8 +195,8 @@ export function MenuItemsTable({ locale }: MenuItemsTableProps) {
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div className="w-full max-w-md">
           <Input
-            aria-label="search"
-            placeholder="Search menu items"
+            aria-label={t("ariaLabels.search")}
+            placeholder={t("search.placeholder")}
             startContent={<Search size={16} />}
             variant="bordered"
             value={searchQuery}
@@ -211,46 +211,46 @@ export function MenuItemsTable({ locale }: MenuItemsTableProps) {
                 variant="flat"
                 startContent={<Filter size={14} />}
               >
-                Filters
+                {t("filters.title")}
               </Button>
             </PopoverTrigger>
             <PopoverContent className="max-w-sm">
               <div className="p-3 w-[280px] space-y-3">
                 <Select
                   selectionMode="multiple"
-                  label="Price Unit"
-                  placeholder="All"
+                  label={t("filters.priceUnit")}
+                  placeholder={t("filters.all")}
                   selectedKeys={priceTypeFilter}
                   onSelectionChange={(keys) =>
                     setPriceTypeFilter(new Set(keys as Set<string>))
                   }
                 >
-                  <SelectItem key="gram">Gram</SelectItem>
-                  <SelectItem key="box">Box</SelectItem>
+                  <SelectItem key="gram">{t("filters.gram")}</SelectItem>
+                  <SelectItem key="box">{t("filters.box")}</SelectItem>
                 </Select>
                 <Select
                   selectionMode="multiple"
-                  label="Availability"
-                  placeholder="All"
+                  label={t("filters.availability")}
+                  placeholder={t("filters.all")}
                   selectedKeys={availabilityFilter}
                   onSelectionChange={(keys) =>
                     setAvailabilityFilter(new Set(keys as Set<string>))
                   }
                 >
-                  <SelectItem key="available">Available</SelectItem>
-                  <SelectItem key="unavailable">Unavailable</SelectItem>
+                  <SelectItem key="available">{t("filters.available")}</SelectItem>
+                  <SelectItem key="unavailable">{t("filters.unavailable")}</SelectItem>
                 </Select>
                 <Select
                   selectionMode="multiple"
-                  label="Active Status"
-                  placeholder="All"
+                  label={t("filters.activeStatus")}
+                  placeholder={t("filters.all")}
                   selectedKeys={activeStatusFilter}
                   onSelectionChange={(keys) =>
                     setActiveStatusFilter(new Set(keys as Set<string>))
                   }
                 >
-                  <SelectItem key="active">Active</SelectItem>
-                  <SelectItem key="inactive">Inactive</SelectItem>
+                  <SelectItem key="active">{t("filters.active")}</SelectItem>
+                  <SelectItem key="inactive">{t("filters.inactive")}</SelectItem>
                 </Select>
                 <div className="flex justify-end gap-2">
                   <Button
@@ -262,7 +262,7 @@ export function MenuItemsTable({ locale }: MenuItemsTableProps) {
                       setActiveStatusFilter(new Set());
                     }}
                   >
-                    Clear
+                    {t("filters.clear")}
                   </Button>
                 </div>
               </div>
@@ -278,22 +278,22 @@ export function MenuItemsTable({ locale }: MenuItemsTableProps) {
 
       <Card>
         <CardHeader>
-          <h2 className="text-xl font-medium">Menu Items</h2>
+          <h2 className="text-xl font-medium">{t("table.title")}</h2>
         </CardHeader>
         <CardBody>
-          <Table aria-label="Menu items">
+          <Table aria-label={t("table.ariaLabel")}>
             <TableHeader>
-              <TableColumn>Image</TableColumn>
-              <TableColumn>Name</TableColumn>
-              <TableColumn>Arabic Name</TableColumn>
-              <TableColumn>Category</TableColumn>
-              <TableColumn>Status</TableColumn>
-              <TableColumn>Prices</TableColumn>
-              <TableColumn>Actions</TableColumn>
+              <TableColumn>{t("table.columns.image")}</TableColumn>
+              <TableColumn>{t("table.columns.name")}</TableColumn>
+              <TableColumn>{t("table.columns.nameAr")}</TableColumn>
+              <TableColumn>{t("table.columns.category")}</TableColumn>
+              <TableColumn>{t("table.columns.status")}</TableColumn>
+              <TableColumn>{t("table.columns.prices")}</TableColumn>
+              <TableColumn>{t("table.columns.actions")}</TableColumn>
             </TableHeader>
             <TableBody
               emptyContent={
-                searchQuery ? "No items match your search" : "No items yet"
+                searchQuery ? t("table.empty.search") : t("table.empty.default")
               }
             >
               {filteredItems.map((item) => {
@@ -314,7 +314,7 @@ export function MenuItemsTable({ locale }: MenuItemsTableProps) {
                       ) : (
                         <div className="w-12 h-12 rounded-lg bg-default-200 flex items-center justify-center">
                           <span className="text-xs text-default-400">
-                            No image
+                            {t("noImage")}
                           </span>
                         </div>
                       )}
@@ -338,13 +338,13 @@ export function MenuItemsTable({ locale }: MenuItemsTableProps) {
                           size="sm"
                           color={item.availability ? "success" : "warning"}
                         >
-                          {item.availability ? "Available" : "Unavailable"}
+                          {item.availability ? t("filters.available") : t("filters.unavailable")}
                         </Chip>
                         <Chip
                           size="sm"
                           color={item.is_active ? "primary" : "default"}
                         >
-                          {item.is_active ? "Active" : "Inactive"}
+                          {item.is_active ? t("filters.active") : t("filters.inactive")}
                         </Chip>
                       </div>
                     </TableCell>
@@ -367,7 +367,7 @@ export function MenuItemsTable({ locale }: MenuItemsTableProps) {
                             size="sm"
                             variant="flat"
                             startContent={<Edit2 size={14} />}
-                            aria-label="Edit menu item"
+                            aria-label={t("ariaLabels.edit")}
                           />
                         </Link>
                         <Button
@@ -392,8 +392,8 @@ export function MenuItemsTable({ locale }: MenuItemsTableProps) {
                           }}
                           aria-label={
                             item.is_active
-                              ? "Disable menu item"
-                              : "Enable menu item"
+                              ? t("ariaLabels.disable")
+                              : t("ariaLabels.enable")
                           }
                         />
                         <Button
@@ -409,7 +409,7 @@ export function MenuItemsTable({ locale }: MenuItemsTableProps) {
                             });
                             onDeleteConfirmationOpen();
                           }}
-                          aria-label="Delete menu item"
+                          aria-label={t("ariaLabels.delete")}
                         />
                       </div>
                     </TableCell>
@@ -432,10 +432,10 @@ export function MenuItemsTable({ locale }: MenuItemsTableProps) {
           onDeleteConfirmationClose();
         }}
         onCancel={onDeleteConfirmationClose}
-        title="Confirm Deletion"
-        content={`Are you sure you want to delete ${deletingItem?.itemName}? This action cannot be undone.`}
-        confirmText="Delete"
-        cancelText="Cancel"
+        title={t("confirmations.delete.title")}
+        content={t("confirmations.delete.content", { name: deletingItem?.itemName ?? "" })}
+        confirmText={t("confirmations.delete.confirm")}
+        cancelText={t("confirmations.delete.cancel")}
         confirmColor="danger"
       />
       {toggleConfirmation ? (
@@ -453,16 +453,22 @@ export function MenuItemsTable({ locale }: MenuItemsTableProps) {
             onToggleConfirmationClose();
           }}
           onCancel={onToggleConfirmationClose}
-          title={`Confirm ${
-            toggleConfirmation.isCurrentlyActive ? "Disable" : "Enable"
-          }`}
-          content={`Are you sure you want to ${
-            toggleConfirmation.isCurrentlyActive ? "disable" : "enable"
-          } ${toggleConfirmation.itemName}?`}
-          confirmText={
-            toggleConfirmation.isCurrentlyActive ? "Disable" : "Enable"
+          title={
+            toggleConfirmation.isCurrentlyActive
+              ? t("confirmations.disable.title")
+              : t("confirmations.enable.title")
           }
-          cancelText="Cancel"
+          content={
+            toggleConfirmation.isCurrentlyActive
+              ? t("confirmations.disable.content", { name: toggleConfirmation.itemName })
+              : t("confirmations.enable.content", { name: toggleConfirmation.itemName })
+          }
+          confirmText={
+            toggleConfirmation.isCurrentlyActive
+              ? t("confirmations.disable.confirm")
+              : t("confirmations.enable.confirm")
+          }
+          cancelText={t("confirmations.disable.cancel")}
           confirmColor={
             toggleConfirmation.isCurrentlyActive ? "warning" : "success"
           }

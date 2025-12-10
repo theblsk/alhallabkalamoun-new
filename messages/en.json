@@ -48,6 +48,7 @@
     "welcome": "Manage categories, menu items, and pricing in one place.",
     "goToMenuItems": "Go to Menu Items",
     "goToCategories": "Go to Categories",
+    "tabsAriaLabel": "Dashboard tabs",
     "categories": {
       "title": "Categories",
       "subtitle": "Manage your menu categories",
@@ -71,6 +72,48 @@
         "description": "Description",
         "descriptionAr": "Arabic Description",
         "active": "Active"
+      },
+      "search": {
+        "placeholder": "Search categories"
+      },
+      "table": {
+        "title": "Categories",
+        "ariaLabel": "Categories",
+        "columns": {
+          "name": "Name",
+          "nameAr": "Arabic Name",
+          "status": "Status",
+          "description": "Description",
+          "actions": "Actions"
+        },
+        "empty": {
+          "default": "No categories yet",
+          "search": "No categories match your search"
+        }
+      },
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "confirmations": {
+        "delete": {
+          "title": "Confirm Deletion",
+          "content": "Are you sure you want to delete {name}? This action cannot be undone.",
+          "confirm": "Delete",
+          "cancel": "Cancel"
+        },
+        "enable": {
+          "title": "Confirm Enable",
+          "content": "Are you sure you want to enable {name}?",
+          "confirm": "Enable",
+          "cancel": "Cancel"
+        },
+        "disable": {
+          "title": "Confirm Disable",
+          "content": "Are you sure you want to disable {name}?",
+          "confirm": "Disable",
+          "cancel": "Cancel"
+        }
       }
     },
     "items": {
@@ -107,6 +150,68 @@
         "available": "Available",
         "active": "Active",
         "image": "Image"
+      },
+      "search": {
+        "placeholder": "Search menu items"
+      },
+      "table": {
+        "title": "Menu Items",
+        "ariaLabel": "Menu items",
+        "columns": {
+          "image": "Image",
+          "name": "Name",
+          "nameAr": "Arabic Name",
+          "category": "Category",
+          "status": "Status",
+          "prices": "Prices",
+          "actions": "Actions"
+        },
+        "empty": {
+          "default": "No items yet",
+          "search": "No items match your search"
+        }
+      },
+      "filters": {
+        "title": "Filters",
+        "priceUnit": "Price Unit",
+        "availability": "Availability",
+        "activeStatus": "Active Status",
+        "all": "All",
+        "clear": "Clear",
+        "gram": "Gram",
+        "box": "Box",
+        "available": "Available",
+        "unavailable": "Unavailable",
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "confirmations": {
+        "delete": {
+          "title": "Confirm Deletion",
+          "content": "Are you sure you want to delete {name}? This action cannot be undone.",
+          "confirm": "Delete",
+          "cancel": "Cancel"
+        },
+        "enable": {
+          "title": "Confirm Enable",
+          "content": "Are you sure you want to enable {name}?",
+          "confirm": "Enable",
+          "cancel": "Cancel"
+        },
+        "disable": {
+          "title": "Confirm Disable",
+          "content": "Are you sure you want to disable {name}?",
+          "confirm": "Disable",
+          "cancel": "Cancel"
+        }
+      },
+      "noImage": "No image",
+      "ariaLabels": {
+        "search": "Search",
+        "edit": "Edit menu item",
+        "delete": "Delete menu item",
+        "enable": "Enable menu item",
+        "disable": "Disable menu item"
       }
     },
     "search": {

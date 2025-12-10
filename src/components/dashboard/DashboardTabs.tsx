@@ -4,6 +4,7 @@ import { Tabs, Tab } from '@heroui/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { usePathname } from '@/i18n/navigation';
 import { useState, useTransition, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { DashboardQueryProvider } from './QueryProvider';
 import { CategoriesTable } from './CategoriesTable';
 import { MenuItemsTable } from './MenuItemsTable';
@@ -23,6 +24,7 @@ export default function DashboardTabs({ locale, translations }: DashboardTabsPro
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
+  const t = useTranslations('dashboard');
   
   const urlTab = searchParams.get('tab') === 'menu-items' ? 'menu-items' : 'categories';
   const [selectedTab, setSelectedTab] = useState(urlTab);
@@ -52,11 +54,11 @@ export default function DashboardTabs({ locale, translations }: DashboardTabsPro
         </header>
 
         <Tabs 
-          aria-label="Dashboard tabs" 
+          aria-label={t('tabsAriaLabel')} 
           selectedKey={selectedTab}
           onSelectionChange={handleTabChange}
         >
-          <Tab key="categories" title="Categories">
+          <Tab key="categories" title={t('categories.title')}>
             <div className="mt-4">
               {isPending && selectedTab === 'categories' ? (
                 <TableSkeleton />
@@ -65,7 +67,7 @@ export default function DashboardTabs({ locale, translations }: DashboardTabsPro
               )}
             </div>
           </Tab>
-          <Tab key="menu-items" title="Menu Items">
+          <Tab key="menu-items" title={t('items.title')}>
             <div className="mt-4">
               {isPending && selectedTab === 'menu-items' ? (
                 <TableSkeleton />
